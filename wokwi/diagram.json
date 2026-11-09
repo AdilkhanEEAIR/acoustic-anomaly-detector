@@ -4,7 +4,7 @@
   "editor": "wokwi",
   "parts": [
     { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
-    { "type": "wokwi-potentiometer", "id": "mic", "top": -150, "left": 60, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "mic", "top": -150, "left": 60, "attrs": { "value": "512" } },
     { "type": "wokwi-led", "id": "led_green", "top": -130, "left": 250, "attrs": { "color": "green" } },
     { "type": "wokwi-led", "id": "led_red", "top": -130, "left": 310, "attrs": { "color": "red" } },
     { "type": "wokwi-led", "id": "fan", "top": -130, "left": 370, "attrs": { "color": "blue", "label": "FAN PWM" } },

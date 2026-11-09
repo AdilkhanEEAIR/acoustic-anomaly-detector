@@ -109,6 +109,7 @@ ISR(TIMER2_COMPA_vect) {
   uint8_t lo = ADCL;
   uint8_t hi = ADCH;
   uint16_t x = ((uint16_t)hi << 8) | lo;
+  ADCSRA |= (1 << ADSC);
 
   int16_t dev = (int16_t)x - (int16_t)dc;
   uint16_t adev = (dev < 0) ? (uint16_t)(-dev) : (uint16_t)dev;
