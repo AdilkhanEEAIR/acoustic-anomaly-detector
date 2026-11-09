@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "author": "Adilkhan Dzhanteliev",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "mic", "top": -150, "left": 60, "attrs": {} },
+    { "type": "wokwi-led", "id": "led_green", "top": -130, "left": 250, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "led_red", "top": -130, "left": 310, "attrs": { "color": "red" } },
+    { "type": "wokwi-led", "id": "fan", "top": -130, "left": 370, "attrs": { "color": "blue", "label": "FAN PWM" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": -40, "left": 230, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r2", "top": -40, "left": 290, "rotate": 90, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "r3", "top": -40, "left": 350, "rotate": 90, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "mic:VCC", "uno:5V", "red", [] ],
+    [ "mic:GND", "uno:GND.1", "black", [] ],
+    [ "mic:SIG", "uno:A0", "orange", [] ],
+    [ "led_green:A", "r1:1", "green", [] ],
+    [ "r1:2", "uno:8", "green", [] ],
+    [ "led_green:C", "uno:GND.2", "black", [] ],
+    [ "led_red:A", "r2:1", "red", [] ],
+    [ "r2:2", "uno:9", "red", [] ],
+    [ "led_red:C", "uno:GND.2", "black", [] ],
+    [ "fan:A", "r3:1", "blue", [] ],
+    [ "r3:2", "uno:5", "blue", [] ],
+    [ "fan:C", "uno:GND.2", "black", [] ]
+  ],
+  "serialMonitor": { "display": "always", "newline": "none" },
+  "dependencies": {}
+}
